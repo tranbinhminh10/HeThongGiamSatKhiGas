@@ -20,7 +20,9 @@ Dự án sử dụng vi điều khiển **ESP32** để giám sát nồng độ 
 2. Chọn dự án ESP32.
 3. Copy nội dung file `diagram.json` dán vào tab sơ đồ mạch.
 4. Copy code từ `HeThongBaoChay.ino` và `webpage.h` vào các tab tương ứng.
-5. Nhấn **Play** để bắt đầu.
+5. Đổi lại mail, password (để gửi mail) và bot token, chat_id (để gửi vào telegram)
+6. Truy cập vào http://localhost:8180/ để vào web server
+7. Nhấn **Play** để bắt đầu.
 
 ---
 *Dự án được thực hiện bởi: Binh Minh Tran*
