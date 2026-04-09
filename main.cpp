@@ -201,14 +201,14 @@ void loop() {
 
             if (isTesting) {
                 isMuted = false;
-                ledcWrite(BUZZER_CHANNEL, 128); // 🔥 Bật còi (Duty cycle 50%)
+                ledcWrite(BUZZER_CHANNEL, 128); //Bật còi (50%)
                 isBuzzerOn = true;
                 digitalWrite(relayPin, HIGH);
                 analogWrite(pwmPin, 255);
                 lcd.clear();
                 lcd.print("--- TESTING ---");
             } else {
-                ledcWrite(BUZZER_CHANNEL, 0); // 🔥 Tắt còi hoàn toàn
+                ledcWrite(BUZZER_CHANNEL, 0); //Tắt còi hoàn toàn
                 isBuzzerOn = false;
                 digitalWrite(relayPin, LOW);
                 analogWrite(pwmPin, manualPwmVal);
@@ -218,7 +218,7 @@ void loop() {
         else if (pressDuration > 50) {
             // MUTE
             isMuted = true;
-            ledcWrite(BUZZER_CHANNEL, 0); // 🔥 Tắt còi hoàn toàn
+            ledcWrite(BUZZER_CHANNEL, 0); //Tắt còi hoàn toàn
             isBuzzerOn = false;
 
             Serial.println(">>> DA KHOA COI (MUTE)!");
@@ -244,11 +244,11 @@ void loop() {
 
                 if (isMuted == false) {
                     if (isBuzzerOn == false) { 
-                        ledcWrite(BUZZER_CHANNEL, 128); // 🔥 Bật còi
+                        ledcWrite(BUZZER_CHANNEL, 128); //Bật còi
                         isBuzzerOn = true;
                     }
                 } else {
-                    ledcWrite(BUZZER_CHANNEL, 0); // 🔥 Tắt còi hoàn toàn
+                    ledcWrite(BUZZER_CHANNEL, 0); //Tắt còi hoàn toàn
                     isBuzzerOn = false;
                 }
 
@@ -269,7 +269,7 @@ void loop() {
             } else {
                 lcd.setCursor(0, 1); lcd.print("Status: Normal ");
                 digitalWrite(relayPin, LOW);
-                ledcWrite(BUZZER_CHANNEL, 0); // 🔥 Tắt còi hoàn toàn
+                ledcWrite(BUZZER_CHANNEL, 0); //Tắt còi hoàn toàn
                 isBuzzerOn = false; 
                 analogWrite(pwmPin, manualPwmVal); 
                 
