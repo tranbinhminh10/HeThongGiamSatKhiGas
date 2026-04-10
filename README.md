@@ -19,7 +19,7 @@ Dự án sử dụng vi điều khiển **ESP32** để giám sát nồng độ 
 1. Truy cập vào [Wokwi.com](https://wokwi.com).
 2. Chọn dự án ESP32.
 3. Copy nội dung file `diagram.json` dán vào tab sơ đồ mạch.
-4. Copy code từ `HeThongBaoChay.ino` và `webpage.h` vào các tab tương ứng.
+4. Copy code từ `main.cpp` và `webpage.h` vào các tab tương ứng.
 5. Đổi lại mail, password (để gửi mail) và bot token, chat_id (để gửi vào telegram)
 6. Truy cập vào http://localhost:8180/ để vào web server
 7. Nhấn **Play** để bắt đầu.
