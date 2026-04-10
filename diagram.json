@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "author": "Binh Minh Tran",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": -145.3,
+      "left": 95.8,
+      "attrs": { "label": "Gas Sensor" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": -138,
+      "left": 224.6,
+      "attrs": { "color": "red", "label": "Còi báo cháy" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz", "top": -122.4, "left": 309, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 179.2,
+      "left": 159.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "fan",
+      "top": -3.6,
+      "left": 387.8,
+      "attrs": { "color": "blue", "label": "Quạt (PWM)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 80,
+      "left": -100,
+      "attrs": { "color": "green", "label": "Mute/Test" }
+    }
+  ],
+  "connections": [
+    [ "esp:GND.1", "pot:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "pot:VCC", "red", [ "v0" ] ],
+    [ "esp:34", "pot:SIG", "green", [ "v0" ] ],
+    [ "esp:5", "led:A", "red", [ "v-115.2", "h174.24" ] ],
+    [ "esp:GND.2", "led:C", "black", [ "v-57.6", "h164.24" ] ],
+    [ "esp:4", "bz:2", "red", [ "v0" ] ],
+    [ "esp:GND.2", "bz:1", "black", [ "v0", "h10" ] ],
+    [ "esp:3V3", "lcd:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "lcd:GND", "black", [ "v0" ] ],
+    [ "esp:21", "lcd:SDA", "green", [ "v0" ] ],
+    [ "esp:22", "lcd:SCL", "blue", [ "v0" ] ],
+    [ "esp:18", "fan:A", "blue", [ "v-20", "h70" ] ],
+    [ "esp:GND.3", "fan:C", "black", [ "v-30", "h60" ] ],
+    [ "esp:19", "btn:1.r", "green", [ "v0", "h-20" ] ],
+    [ "esp:GND.1", "btn:2.r", "black", [ "v0", "h-30" ] ]
+  ],
+  "dependencies": {}
+}
